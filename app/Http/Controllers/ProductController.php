@@ -9,10 +9,17 @@ use Inertia\ResponseFactory;
 
 class ProductController extends Controller
 {
-    public function index(Request $request): Response|ResponseFactory
+    public function edit(Request $request): Response|ResponseFactory
     {
         $products = Product::get();
 
         return inertia('Products', compact('products'));
+    }
+
+    public function update(Request $request)
+    {
+        $products = Product::get();
+
+        return back();
     }
 }
