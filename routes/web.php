@@ -4,8 +4,8 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [ProductController::class, 'edit']);
-Route::patch('/products', [ProductController::class, 'update']);
+Route::get('/', [ProductController::class, 'edit'])->name('products.index');
+Route::patch('/products', [ProductController::class, 'update'])->name('products.update');
 
 Route::middleware([
     'auth:sanctum',
